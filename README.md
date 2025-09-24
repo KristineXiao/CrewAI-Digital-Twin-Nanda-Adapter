@@ -12,18 +12,22 @@ It introduces itself and provides personalized Boston recommendations (restauran
 ---
 
 ## Setup Instructions
+Here are the steps for deployment on EC2 to make it persistent or discoverable in the global registry 
 
-### 1. Create and Activate Environment
+Note: You can also run this repo **locally** without EC2/SSL for testing, though it won’t be registered in the Nanda Index.
+
+### 1. Clone this Repo
+```bash
+git clone https://github.com/KristineXiao/CrewAI-Digital-Twin-Nanda-Adapter.git
+cd CrewAI-Digital-Twin-Nanda-Adapter
+```
+
+### 2. Create and Activate Environment
 ```bash
 python3 -m venv mit-ai-studio
 source mit-ai-studio/bin/activate
 pip install -r requirements.txt
 ```
-
-### 2. Clone Adapter and Place Agent
-git clone https://github.com/projnanda/adapter.git
-cd adapter/nanda_adapter/examples
-# Place `boston_guide_nanda.py` here
 
 ### 3. Domain and SSL Configuration
 1. Buy a domain and create a subdomain pointing to your EC2 IP using an A Record.
@@ -83,4 +87,4 @@ This demonstrates how to wrap CrewAI logic with the Nanda Adapter so it can join
 
 - Only Anthropic Claude models are supported, so I switched from OpenAI to ChatAnthropic.
 
-- I was able to get the adapter running and see a registry link printed in the logs. However, when I opened that link in the Nanda Registry portal, I received an “Error checking user” message instead of a working chat view. This suggests that while my agent successfully registered, the registry UI or authentication may not yet fully support it.  
+- I was able to get the adapter running and see a registry link printed in the logs. However, when I opened that link in the Nanda Registry portal, I received an “Error checking user” message instead of a working chat view. This suggests that while my agent successfully registered, the registry UI or authentication may not yet fully support it. Despite the registry UI issue, the logs confirm that the adapter successfully launched my agent and attempted registration, so the adapter itself appears to be working as expected.
