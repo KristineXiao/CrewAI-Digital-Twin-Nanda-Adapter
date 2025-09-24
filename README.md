@@ -40,9 +40,9 @@ pip install -r requirements.txt
 ```bash
 sudo apt update
 sudo apt install certbot -y
-sudo certbot certonly --standalone -d agent.tongxiao02.com
-sudo cp -L /etc/letsencrypt/live/agent.tongxiao02.com/fullchain.pem .
-sudo cp -L /etc/letsencrypt/live/agent.tongxiao02.com/privkey.pem .
+sudo certbot certonly --standalone -d <YOUR_DOMAIN_NAME.COM>
+sudo cp -L /etc/letsencrypt/live/<YOUR_DOMAIN_NAME.COM>/fullchain.pem .
+sudo cp -L /etc/letsencrypt/live/<YOUR_DOMAIN_NAME.COM>/privkey.pem .
 chmod 600 fullchain.pem privkey.pem
 ```
 
@@ -50,7 +50,7 @@ chmod 600 fullchain.pem privkey.pem
 Set required environment variables before running the agent:
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-xxxxxxxx
-export DOMAIN_NAME=agent.tongxiao02.com
+export DOMAIN_NAME=<YOUR_DOMAIN_NAME.COM>
 ```
 
 ### 5. Run the Agent
